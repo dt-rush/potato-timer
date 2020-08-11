@@ -93,12 +93,14 @@ const runner = (program) => {
     const next = () => setTimeSegment.apply(null, program[i]);
     const reactions = [
         {
-            event: 'segment-done',
-            f: (e) => {
-                console.log(`${e.label} finished`);
-                i++;
-                i %= program.length;
-                next();
+            event: 'tick',
+            f: (remaining) => {
+                if (remaining == 0) {
+                    console.log(`${state.label} finished`);
+                    i++;
+                    i %= program.length;
+                    next();
+                }
             }
         },
         {
@@ -124,8 +126,8 @@ const runner = (program) => {
     ];
 
     reactions.forEach(r => {
-        events.on(r.event, (e) => {
-            r.f(e);
+        events.on(r.event, (data) => {
+            r.f(data);
             console.debug(state);
         });
     });
