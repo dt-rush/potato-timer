@@ -1,0 +1,28 @@
+{
+  "name": "potato-timer",
+  "version": "1.0.0",
+  "description": "focus for blocks of time with short breaks",
+  "main": "server.js",
+  "bin": {
+    "potato-timer-server": "./server.js",
+    "potato-timer-cli": "./cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dt-rush/potato-timer.git"
+  },
+  "author": "dt-rush",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dt-rush/potato-timer/issues"
+  },
+  "homepage": "https://github.com/dt-rush/potato-timer#readme",
+  "dependencies": {
+    "eventemitter3": "^4.0.4",
+    "nanotimer": "^0.3.15",
+    "node-ipc": "^9.1.1"
+  }
+}
