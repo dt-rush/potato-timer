@@ -1,6 +1,6 @@
 {
   "name": "potato-timer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "focus for blocks of time with short breaks",
   "main": "server.js",
   "bin": {
